@@ -74,7 +74,10 @@ export default function Dashboard() {
       {/* Header */}
       <header className="sticky top-0 z-40 bg-cream/80 backdrop-blur-md border-b border-stone-200/50">
         <div className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
-          <HandwrittenTitle text="FrogLog ✦" as="h1" className="text-2xl! md:text-3xl!" />
+          <div className="flex items-center gap-2">
+            <HandwrittenTitle text="FrogLog" as="h1" className="text-2xl! md:text-3xl!" />
+            <Image src="/sapo2.png" alt="sapo" width={32} height={32} />
+          </div>
           <button
             onClick={signOut}
             className="flex items-center gap-2 text-sm text-stone-500 hover:text-stone-700 transition-colors px-3 py-2 rounded-lg hover:bg-white/60"

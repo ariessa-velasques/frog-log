@@ -57,8 +57,9 @@ export default function LoginPage() {
                         </div>
                     </div>
                     <HandwrittenTitle text="FrogLog" className="mb-2" />
-                    <p className="text-stone-500 text-sm">
-                        Seu diário de metas gamificado ✦
+                    <p className="text-stone-500 text-sm flex items-center justify-center gap-1">
+                        Seu diário de metas gamificado
+                        <Image src="/sapo2.png" alt="sapo" width={16} height={16} />
                     </p>
                 </div>
 

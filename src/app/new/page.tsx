@@ -108,7 +108,10 @@ export default function NewChallengePage() {
                     >
                         <ArrowLeft size={20} />
                     </button>
-                    <HandwrittenTitle text="Novo Desafio ✦" as="h1" className="text-2xl!" />
+                    <div className="flex items-center gap-2">
+                        <HandwrittenTitle text="Novo Desafio" as="h1" className="text-2xl!" />
+                        <Image src="/sapo2.png" alt="sapo" width={24} height={24} />
+                    </div>
                 </div>
             </header>
 
@@ -253,14 +256,15 @@ export default function NewChallengePage() {
 
                     {/* Lembre-se (Reminders) */}
                     <div className="card-paper p-6 animate-fadeIn" style={{ animationDelay: '0.2s' }}>
-                        <h3 className="font-handwritten text-xl text-green-700 mb-3">
-                            ✦ Lembre-se
+                        <h3 className="font-handwritten text-xl text-green-700 mb-3 flex items-center gap-2">
+                            Lembre-se
+                            <Image src="/sapo2.png" alt="sapo" width={20} height={20} />
                         </h3>
                         <p className="text-xs text-stone-400 mb-3">Frases motivacionais para te lembrar nos dias difíceis</p>
                         <div className="space-y-2">
                             {reminders.map((reminder, index) => (
                                 <div key={index} className="flex items-center gap-2">
-                                    <span className="text-green-500">✦</span>
+                                    <Image src="/sapo2.png" alt="sapo" width={16} height={16} className="mt-1 opacity-70" />
                                     <input
                                         type="text"
                                         value={reminder}

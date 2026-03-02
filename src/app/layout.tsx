@@ -17,7 +17,7 @@ const gochiHand = Gochi_Hand({
 });
 
 export const metadata: Metadata = {
-  title: "FrogLog ✦ Seu diário de metas",
+  title: "FrogLog Seu diário de metas",
   description: "Rastreie seus desafios e crie hábitos com um tabuleiro interativo inspirado em bullet journals.",
 };
 

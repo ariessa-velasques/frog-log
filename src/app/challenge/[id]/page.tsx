@@ -189,11 +189,13 @@ export default function ChallengeDetailPage() {
                 {/* Lembre-se (Reminders/Motivations) */}
                 {reminders.length > 0 && (
                     <div className="card-paper p-6 mb-6 animate-fadeIn" style={{ animationDelay: '0.15s' }}>
-                        <h3 className="font-handwritten text-2xl text-green-700 mb-4">Lembre-se:</h3>
-                        <ul className="space-y-3">
+                        <h3 className="font-handwritten text-xl text-green-700 mb-3 flex items-center gap-2">
+                            Lembre-se
+                            <Image src="/sapo2.png" alt="sapo" width={20} height={20} />
+                        </h3>    <ul className="space-y-3">
                             {reminders.map((reminder, index) => (
                                 <li key={index} className="flex items-start gap-2 text-stone-600">
-                                    <span className="text-green-500 font-bold mt-0.5">✦</span>
+                                    <Image src="/sapo2.png" alt="sapo" width={16} height={16} className="mt-1 opacity-70" />
                                     <span className="text-sm leading-relaxed">{reminder}</span>
                                 </li>
                             ))}
@@ -203,9 +205,12 @@ export default function ChallengeDetailPage() {
 
                 {/* Motivational footer */}
                 <div className="card-paper p-6 text-center animate-fadeIn" style={{ animationDelay: '0.2s' }}>
-                    <div className="flex items-center justify-center gap-2 mb-2">
+                    <div className="flex items-center justify-center gap-3">
                         <Image src="/sapo.png" alt="sapo" width={32} height={32} />
-                        <p className="font-handwritten text-2xl text-green-600">You can do it! ✦</p>
+                        <p className="font-handwritten text-2xl text-green-600 flex items-center gap-2">
+                            You can do it!
+                            <Image src="/sapo2.png" alt="sapo" width={20} height={20} />
+                        </p>
                     </div>
                     <p className="text-sm text-stone-500">
                         Cada dia marcado é um passo mais perto do seu objetivo.
