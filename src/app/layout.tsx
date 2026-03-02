@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Gochi_Hand } from "next/font/google";
+import { Inter, Gochi_Hand, Rubik_Doodle_Shadow } from "next/font/google";
 import "./globals.css";
 import { AuthProvider } from "@/components/AuthProvider";
 
@@ -13,6 +13,13 @@ const gochiHand = Gochi_Hand({
   weight: "400",
   subsets: ["latin"],
   variable: "--font-gochi",
+  display: "swap",
+});
+
+const rubikDoodle = Rubik_Doodle_Shadow({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-rubik-doodle",
   display: "swap",
 });
 
@@ -38,7 +45,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" className={`${inter.variable} ${gochiHand.variable}`} suppressHydrationWarning>
+    <html lang="pt-BR" className={`${inter.variable} ${gochiHand.variable} ${rubikDoodle.variable}`} suppressHydrationWarning>
       <body className="antialiased min-h-screen">
         <AuthProvider>
           {children}
