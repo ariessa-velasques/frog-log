@@ -2,6 +2,7 @@
 
 import { DailyLog } from '@/lib/types'
 import DayCard from './DayCard'
+import { useEffect, useState } from 'react'
 
 interface BoardGridProps {
     dailyLogs: DailyLog[]
@@ -9,15 +10,31 @@ interface BoardGridProps {
     columns?: number
 }
 
+function useWindowWidth() {
+    const [width, setWidth] = useState(768)
+
+    useEffect(() => {
+        setWidth(window.innerWidth)
+        const handleResize = () => setWidth(window.innerWidth)
+        window.addEventListener('resize', handleResize)
+        return () => window.removeEventListener('resize', handleResize)
+    }, [])
+
+    return width
+}
+
 export default function BoardGrid({ dailyLogs, onDayClick, columns = 8 }: BoardGridProps) {
     const today = new Date()
     today.setHours(0, 0, 0, 0)
 
+    const windowWidth = useWindowWidth()
+    const effectiveColumns = windowWidth < 640 ? 5 : columns
+
     // Split logs into rows and apply snake (boustrophedon) pattern
     const rows: DailyLog[][] = []
-    for (let i = 0; i < dailyLogs.length; i += columns) {
-        const row = dailyLogs.slice(i, i + columns)
-        const rowIndex = Math.floor(i / columns)
+    for (let i = 0; i < dailyLogs.length; i += effectiveColumns) {
+        const row = dailyLogs.slice(i, i + effectiveColumns)
+        const rowIndex = Math.floor(i / effectiveColumns)
         rows.push(rowIndex % 2 === 1 ? [...row].reverse() : row)
     }
 
@@ -30,8 +47,8 @@ export default function BoardGrid({ dailyLogs, onDayClick, columns = 8 }: BoardG
                         <div className="flex py-0">
                             <div
                                 className={`pen-connector-v ${rowIndex % 2 === 1
-                                        ? 'ml-auto mr-[18px] md:mr-[22px]'
-                                        : 'mr-auto ml-[18px] md:ml-[22px]'
+                                    ? 'ml-auto mr-[16px] sm:mr-[18px] md:mr-[22px]'
+                                    : 'mr-auto ml-[16px] sm:ml-[18px] md:ml-[22px]'
                                     }`}
                             />
                         </div>
@@ -55,7 +72,7 @@ export default function BoardGrid({ dailyLogs, onDayClick, columns = 8 }: BoardG
                                     />
                                     {/* Horizontal pen-stroke connector */}
                                     {colIndex < row.length - 1 && (
-                                        <div className="pen-connector-h mb-[18px] md:mb-[22px]" />
+                                        <div className="pen-connector-h mb-[14px] sm:mb-[18px] md:mb-[22px]" />
                                     )}
                                 </div>
                             )

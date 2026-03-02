@@ -242,6 +242,38 @@ body {
   }
 }
 
+/* ========== Cloud shape card ========== */
+.cloud-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 60px;
+  padding: 2rem 2.5rem;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.06));
+  border: 2px solid var(--color-stone-light);
+}
+
+.cloud-card::before {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 60px;
+  z-index: -1;
+  mask-image: radial-gradient(ellipse 28px 26px at 15% 0%, transparent 95%, black 100%),
+    radial-gradient(ellipse 32px 28px at 45% -2%, transparent 95%, black 100%),
+    radial-gradient(ellipse 26px 24px at 75% 1%, transparent 95%, black 100%),
+    radial-gradient(ellipse 24px 22px at 95% 15%, transparent 95%, black 100%),
+    radial-gradient(ellipse 28px 26px at 100% 50%, transparent 95%, black 100%),
+    radial-gradient(ellipse 26px 24px at 95% 85%, transparent 95%, black 100%),
+    radial-gradient(ellipse 30px 28px at 70% 100%, transparent 95%, black 100%),
+    radial-gradient(ellipse 28px 26px at 40% 98%, transparent 95%, black 100%),
+    radial-gradient(ellipse 24px 22px at 10% 100%, transparent 95%, black 100%),
+    radial-gradient(ellipse 26px 24px at 0% 70%, transparent 95%, black 100%),
+    radial-gradient(ellipse 28px 26px at -1% 35%, transparent 95%, black 100%);
+  mask-composite: exclude;
+  -webkit-mask-composite: destination-out;
+}
+
 /* ========== Date Picker (react-day-picker) ========== */
 .date-picker-card {
   background: rgba(255, 255, 255, 0.95);

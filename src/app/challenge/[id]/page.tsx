@@ -136,32 +136,34 @@ export default function ChallengeDetailPage() {
 
             <main className="max-w-4xl mx-auto px-4 py-8">
                 {/* Stats bar */}
-                <div className="card-paper p-4 mb-6 animate-fadeIn">
-                    <div className="flex flex-wrap items-center gap-4 text-sm text-stone-600">
-                        <div className="flex items-center gap-2">
-                            <CalendarDays size={16} className="text-green-500" />
-                            <span>Início: {formattedStart}</span>
+                <div className="card-paper p-2 mb-6 animate-fadeIn">
+                    <div className="border-2 border-dashed border-stone-300 rounded-lg p-3">
+                        <div className="flex flex-wrap items-center gap-4 text-sm text-stone-600">
+                            <div className="flex items-center gap-2">
+                                <CalendarDays size={16} className="text-green-500" />
+                                <span>Início: {formattedStart}</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <Target size={16} className="text-green-500" />
+                                <span>Dia {completedCount}/{challenge.total_days}</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <span className="inline-block w-3 h-3 rounded-md bg-green-400" />
+                                <span>{successCount} sucesso{successCount !== 1 ? 's' : ''}</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <span className="inline-block w-3 h-3 rounded-md bg-stone-200 border border-dashed border-red-300" />
+                                <span>{failCount} falha{failCount !== 1 ? 's' : ''}</span>
+                            </div>
                         </div>
-                        <div className="flex items-center gap-2">
-                            <Target size={16} className="text-green-500" />
-                            <span>Dia {completedCount}/{challenge.total_days}</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                            <span className="inline-block w-3 h-3 rounded-md bg-green-400" />
-                            <span>{successCount} sucesso{successCount !== 1 ? 's' : ''}</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                            <span className="inline-block w-3 h-3 rounded-md bg-stone-200 border border-dashed border-red-300" />
-                            <span>{failCount} falha{failCount !== 1 ? 's' : ''}</span>
-                        </div>
-                    </div>
 
-                    {/* Progress bar */}
-                    <div className="w-full h-2 bg-stone-100 rounded-full mt-3 overflow-hidden">
-                        <div
-                            className="h-full bg-gradient-to-r from-green-400 to-green-600 rounded-full transition-all duration-700"
-                            style={{ width: `${challenge.total_days > 0 ? (completedCount / challenge.total_days) * 100 : 0}%` }}
-                        />
+                        {/* Progress bar */}
+                        <div className="w-full h-2 bg-stone-100 rounded-full mt-3 overflow-hidden">
+                            <div
+                                className="h-full bg-gradient-to-r from-green-400 to-green-600 rounded-full transition-all duration-700"
+                                style={{ width: `${challenge.total_days > 0 ? (completedCount / challenge.total_days) * 100 : 0}%` }}
+                            />
+                        </div>
                     </div>
                 </div>
 
@@ -188,33 +190,40 @@ export default function ChallengeDetailPage() {
 
                 {/* Lembre-se (Reminders/Motivations) */}
                 {reminders.length > 0 && (
-                    <div className="card-paper p-6 mb-6 animate-fadeIn" style={{ animationDelay: '0.15s' }}>
-                        <h3 className="font-handwritten text-xl text-green-700 mb-3 flex items-center gap-2">
-                            Lembre-se
-                            <Image src="/sapo2.png" alt="sapo" width={20} height={20} />
-                        </h3>    <ul className="space-y-3">
-                            {reminders.map((reminder, index) => (
-                                <li key={index} className="flex items-start gap-2 text-stone-600">
-                                    <Image src="/sapo2.png" alt="sapo" width={16} height={16} className="mt-1 opacity-70" />
-                                    <span className="text-sm leading-relaxed">{reminder}</span>
-                                </li>
-                            ))}
-                        </ul>
+                    <div className="card-paper p-2 mb-6 animate-fadeIn" style={{ animationDelay: '0.15s' }}>
+                        <div className="border-2 border-dashed border-stone-300 rounded-lg p-4">
+                            <h3 className="font-handwritten text-xl text-green-700 mb-3">
+                                Lembre-se
+                            </h3>
+                            <ul className="space-y-3">
+                                {reminders.map((reminder, index) => (
+                                    <li key={index} className="flex items-start gap-2 text-stone-600">
+                                        <Image src="/sapo2.png" alt="sapo" width={16} height={16} className="mt-1 opacity-70" />
+                                        <span className="text-sm leading-relaxed">{reminder}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
                     </div>
                 )}
 
-                {/* Motivational footer */}
-                <div className="card-paper p-6 text-center animate-fadeIn" style={{ animationDelay: '0.2s' }}>
-                    <div className="flex items-center justify-center gap-3">
-                        <Image src="/sapo.png" alt="sapo" width={32} height={32} />
-                        <p className="font-handwritten text-2xl text-green-600 flex items-center gap-2">
-                            You can do it!
-                            <Image src="/sapo2.png" alt="sapo" width={20} height={20} />
+                {/* Motivational footer — cloud shape */}
+                <div className="relative text-center animate-fadeIn min-h-[250px] flex items-center justify-center" style={{ animationDelay: '0.2s' }}>
+                    <Image
+                        src="/nuvem.png"
+                        alt="nuvem"
+                        fill
+                        className="object-contain pointer-events-none scale-125"
+                        priority
+                    />
+                    <div className="relative z-10 py-4">
+                        <p className="font-handwritten text-2xl text-green-600">
+                            Um pulo de cada vez!
+                        </p>
+                        <p className="text-sm text-stone-500 mt-1">
+                            Cada dia marcado é um passo mais perto do seu objetivo.
                         </p>
                     </div>
-                    <p className="text-sm text-stone-500">
-                        Cada dia marcado é um passo mais perto do seu objetivo.
-                    </p>
                 </div>
             </main>
 

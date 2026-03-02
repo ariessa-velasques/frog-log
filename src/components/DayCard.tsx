@@ -38,9 +38,9 @@ export default function DayCard({ day, date, status, isClickable, isFuture, onCl
                 disabled={!isClickable || isFuture}
                 className={`
           day-cell relative
-          w-10 h-10 md:w-12 md:h-12
+          w-9 h-9 sm:w-10 sm:h-10 md:w-12 md:h-12
           flex items-center justify-center
-          font-handwritten text-base md:text-lg
+          font-handwritten text-sm sm:text-base md:text-lg
           rounded-[14px]
           transition-all duration-300
           select-none
