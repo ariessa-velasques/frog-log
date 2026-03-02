@@ -39,7 +39,9 @@ export default function BoardGrid({ dailyLogs, onDayClick, columns = 8 }: BoardG
     }
 
     return (
-        <div className="flex flex-col items-center gap-0">
+        // inline-flex makes the container width = widest child (first full row)
+        // default items-stretch makes ALL children same width as container
+        <div className="inline-flex flex-col gap-0">
             {rows.map((row, rowIndex) => (
                 <div key={rowIndex}>
                     {/* Vertical pen-stroke connector from previous row */}

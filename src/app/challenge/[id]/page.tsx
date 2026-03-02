@@ -168,7 +168,7 @@ export default function ChallengeDetailPage() {
                 </div>
 
                 {/* Board — snake path game board */}
-                <div className="mb-6 animate-fadeIn overflow-x-auto" style={{ animationDelay: '0.05s' }}>
+                <div className="mb-6 animate-fadeIn overflow-x-auto flex justify-center" style={{ animationDelay: '0.05s' }}>
                     <BoardGrid
                         dailyLogs={challenge.daily_logs}
                         onDayClick={handleDayClick}
