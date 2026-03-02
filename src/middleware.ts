@@ -2,7 +2,7 @@ import { createServerClient } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
 
 export async function middleware(request: NextRequest) {
-    let response = NextResponse.next({
+    let supabaseResponse = NextResponse.next({
         request: {
             headers: request.headers,
         },
@@ -18,13 +18,13 @@ export async function middleware(request: NextRequest) {
                 },
                 setAll(cookiesToSet) {
                     cookiesToSet.forEach(({ name, value, options }) => request.cookies.set(name, value))
-                    response = NextResponse.next({
+                    supabaseResponse = NextResponse.next({
                         request: {
                             headers: request.headers,
                         },
                     })
                     cookiesToSet.forEach(({ name, value, options }) =>
-                        response.cookies.set(name, value, options)
+                        supabaseResponse.cookies.set(name, value, options)
                     )
                 },
             },
@@ -34,7 +34,7 @@ export async function middleware(request: NextRequest) {
     // This will refresh the session if it's expired
     await supabase.auth.getUser()
 
-    return response
+    return supabaseResponse
 }
 
 export const config = {

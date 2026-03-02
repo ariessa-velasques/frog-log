@@ -96,6 +96,8 @@ export default function LoginPage() {
                                     type="email"
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
+                                    name="email"
+                                    autoComplete="email"
                                     placeholder="seu@email.com"
                                     required
                                     className="w-full pl-10 pr-4 py-2.5 text-sm border border-stone-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-300 focus:border-green-300 bg-white text-stone-700 placeholder:text-stone-400"
@@ -115,6 +117,8 @@ export default function LoginPage() {
                                     type="password"
                                     value={password}
                                     onChange={(e) => setPassword(e.target.value)}
+                                    name="password"
+                                    autoComplete={isSignUp ? "new-password" : "current-password"}
                                     placeholder="••••••••"
                                     required
                                     minLength={6}
