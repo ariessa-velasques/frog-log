@@ -26,6 +26,14 @@ const rubikDoodle = Rubik_Doodle_Shadow({
 export const metadata: Metadata = {
   title: "FrogLog Seu diário de metas",
   description: "Rastreie seus desafios e crie hábitos com um tabuleiro interativo inspirado em bullet journals.",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "FrogLog",
+  },
+  formatDetection: {
+    telephone: false,
+  },
   icons: {
     icon: [
       { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
