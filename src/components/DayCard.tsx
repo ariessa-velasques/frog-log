@@ -65,7 +65,7 @@ export default function DayCard({ day, date, status, isClickable, isFuture, onCl
             >
                 {/* Highlighter/crayon splash behind for success */}
                 {status === 'success' && (
-                    <span className="highlighter-splash highlighter-pink" />
+                    <span className="highlighter-splash highlighter-success" />
                 )}
                 {/* Highlighter splash for fail */}
                 {status === 'fail' && (

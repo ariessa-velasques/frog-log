@@ -46,7 +46,7 @@ export default function DatePicker({ value, onChange, label }: DatePickerProps) 
         <div className="relative">
             {label && (
                 <label className="flex items-center gap-2 text-sm font-medium text-stone-600 mb-2">
-                    <Calendar size={16} className="text-pink-400" />
+                    <Calendar size={16} className="text-green-500" />
                     {label}
                 </label>
             )}
@@ -54,7 +54,7 @@ export default function DatePicker({ value, onChange, label }: DatePickerProps) 
                 ref={buttonRef}
                 type="button"
                 onClick={() => setOpen(!open)}
-                className="w-full flex items-center gap-3 px-4 py-2.5 text-sm border border-stone-200 rounded-xl bg-white/50 text-stone-700 hover:border-pink-300 transition-colors text-left"
+                className="w-full flex items-center gap-3 px-4 py-2.5 text-sm border border-stone-200 rounded-xl bg-white/50 text-stone-700 hover:border-green-400 transition-colors text-left"
             >
                 <Calendar size={16} className="text-stone-400" />
                 <span>{formattedDisplay}</span>

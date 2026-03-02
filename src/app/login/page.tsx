@@ -2,8 +2,9 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
+import Image from 'next/image'
 import { useAuth } from '@/components/AuthProvider'
-import { Sparkles, Mail, Lock, ArrowRight } from 'lucide-react'
+import { Mail, Lock, ArrowRight } from 'lucide-react'
 import HandwrittenTitle from '@/components/HandwrittenTitle'
 
 export default function LoginPage() {
@@ -51,11 +52,11 @@ export default function LoginPage() {
                 {/* Logo area */}
                 <div className="text-center mb-8 animate-fadeIn">
                     <div className="inline-block mb-4">
-                        <div className="w-20 h-20 mx-auto bg-pink-100 rounded-full flex items-center justify-center animate-float">
-                            <Sparkles size={36} className="text-pink-400" />
+                        <div className="animate-float">
+                            <Image src="/sapo.png" alt="sapo" width={144} height={144} priority />
                         </div>
                     </div>
-                    <HandwrittenTitle text="Goal Tracker" className="mb-2" />
+                    <HandwrittenTitle text="FrogLog" className="mb-2" />
                     <p className="text-stone-500 text-sm">
                         Seu diário de metas gamificado ✦
                     </p>
@@ -67,14 +68,14 @@ export default function LoginPage() {
                     <div className="flex mb-6 bg-stone-100 rounded-lg p-1">
                         <button
                             onClick={() => { setIsSignUp(false); setError(null); setSuccess(null) }}
-                            className={`flex-1 py-2 px-4 rounded-md text-sm font-medium transition-all duration-200 ${!isSignUp ? 'bg-white shadow-sm text-pink-600' : 'text-stone-500 hover:text-stone-700'
+                            className={`flex-1 py-2 px-4 rounded-md text-sm font-medium transition-all duration-200 ${!isSignUp ? 'bg-white shadow-sm text-green-700' : 'text-stone-500 hover:text-stone-700'
                                 }`}
                         >
                             Entrar
                         </button>
                         <button
                             onClick={() => { setIsSignUp(true); setError(null); setSuccess(null) }}
-                            className={`flex-1 py-2 px-4 rounded-md text-sm font-medium transition-all duration-200 ${isSignUp ? 'bg-white shadow-sm text-pink-600' : 'text-stone-500 hover:text-stone-700'
+                            className={`flex-1 py-2 px-4 rounded-md text-sm font-medium transition-all duration-200 ${isSignUp ? 'bg-white shadow-sm text-green-700' : 'text-stone-500 hover:text-stone-700'
                                 }`}
                         >
                             Criar Conta
@@ -96,7 +97,7 @@ export default function LoginPage() {
                                     onChange={(e) => setEmail(e.target.value)}
                                     placeholder="seu@email.com"
                                     required
-                                    className="w-full pl-10 pr-4 py-2.5 text-sm border border-stone-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-300 focus:border-pink-300 bg-white text-stone-700 placeholder:text-stone-400"
+                                    className="w-full pl-10 pr-4 py-2.5 text-sm border border-stone-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-300 focus:border-green-300 bg-white text-stone-700 placeholder:text-stone-400"
                                 />
                             </div>
                         </div>
@@ -116,7 +117,7 @@ export default function LoginPage() {
                                     placeholder="••••••••"
                                     required
                                     minLength={6}
-                                    className="w-full pl-10 pr-4 py-2.5 text-sm border border-stone-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-300 focus:border-pink-300 bg-white text-stone-700 placeholder:text-stone-400"
+                                    className="w-full pl-10 pr-4 py-2.5 text-sm border border-stone-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-300 focus:border-green-300 bg-white text-stone-700 placeholder:text-stone-400"
                                 />
                             </div>
                         </div>
@@ -139,7 +140,8 @@ export default function LoginPage() {
                         <button
                             type="submit"
                             disabled={loading}
-                            className="w-full flex items-center justify-center gap-2 py-3 bg-gradient-to-r from-pink-400 to-pink-500 text-white rounded-xl font-medium shadow-md shadow-pink-200 hover:shadow-lg hover:from-pink-500 hover:to-pink-600 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                            className="w-full flex items-center justify-center gap-2 py-3 text-white rounded-xl font-medium shadow-md transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                            style={{ background: 'linear-gradient(135deg, #83d45a, #52a033)', boxShadow: '0 4px 14px rgba(131,212,90,0.4)' }}
                         >
                             {loading ? (
                                 <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
@@ -158,6 +160,6 @@ export default function LoginPage() {
                     Feito com ♡ para criar hábitos
                 </p>
             </div>
-        </div>
+        </div >
     )
 }

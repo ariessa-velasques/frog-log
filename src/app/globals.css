@@ -5,12 +5,12 @@
   --color-cream: #faf8f5;
   --color-cream-dark: #f0ece5;
   --color-stone-light: #e8e4de;
-  --color-pink-pastel: #f4a7bb;
-  --color-pink-light: #fce4ec;
-  --color-pink-medium: #e91e80;
+  --color-green-pastel: #ceffb5;
+  --color-green-light: #eaffd9;
+  --color-green-medium: #52a033;
   --color-blue-pastel: #a7c7e7;
   --color-blue-light: #e3f2fd;
-  --color-red-light: #fecaca;
+  --color-red-light: #fecada;
   --grid-color: #d4cfc8;
 }
 
@@ -186,12 +186,12 @@ body {
   animation: splashIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.highlighter-pink {
+.highlighter-success {
   background: radial-gradient(ellipse at 40% 45%,
-      #f9a8c9 0%,
-      #f48fb1 30%,
-      #f06292 50%,
-      rgba(244, 143, 177, 0.3) 70%,
+      #ceffb5 0%,
+      #a8e87a 30%,
+      #83d45a 50%,
+      rgba(206, 255, 181, 0.3) 70%,
       transparent 100%);
 }
 
@@ -253,8 +253,8 @@ body {
 }
 
 .rdp-root {
-  --rdp-accent-color: #f4a7bb;
-  --rdp-accent-background-color: #fce4ec;
+  --rdp-accent-color: #83d45a;
+  --rdp-accent-background-color: #eaffd9;
   font-family: var(--font-sans);
 }
 
@@ -295,8 +295,8 @@ body {
 }
 
 .rdp-nav-btn:hover {
-  background: #fce4ec;
-  border-color: #f4a7bb;
+  background: #eaffd9;
+  border-color: #83d45a;
 }
 
 .rdp-table {
@@ -334,23 +334,23 @@ body {
 }
 
 .rdp-day-btn:hover {
-  background: #fce4ec;
-  border-color: #f4a7bb;
+  background: #eaffd9;
+  border-color: #83d45a;
   transform: scale(1.05);
 }
 
 .rdp-selected .rdp-day-btn {
-  background: linear-gradient(135deg, #f4a7bb, #e91e80);
+  background: linear-gradient(135deg, #ceffb5, #52a033);
   color: white;
-  border-color: #e91e80;
+  border-color: #52a033;
   font-weight: 700;
   box-shadow: 1px 1px 0 #2a2520;
 }
 
 .rdp-today .rdp-day-btn {
-  border-color: #f4a7bb;
+  border-color: #83d45a;
   font-weight: 700;
-  color: #e91e80;
+  color: #52a033;
 }
 
 .rdp-outside .rdp-day-btn {

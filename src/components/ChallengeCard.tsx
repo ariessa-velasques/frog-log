@@ -19,8 +19,8 @@ export default function ChallengeCard({ challenge, dailyLogs }: ChallengeCardPro
 
     return (
         <Link href={`/challenge/${challenge.id}`} className="block group">
-            <div className="bg-white/80 backdrop-blur-sm border border-stone-200 rounded-xl p-5 shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-pink-200">
-                <HandwrittenTitle text={challenge.title} as="h3" className="mb-2 group-hover:text-pink-500 transition-colors" />
+            <div className="bg-white/80 backdrop-blur-sm border border-stone-200 rounded-xl p-5 shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-green-200">
+                <HandwrittenTitle text={challenge.title} as="h3" className="mb-2 group-hover:text-green-600 transition-colors" />
 
                 <div className="flex items-center gap-3 text-sm text-stone-500 mb-4">
                     <span>Dia {completedDays}/{challenge.total_days}</span>
@@ -31,7 +31,7 @@ export default function ChallengeCard({ challenge, dailyLogs }: ChallengeCardPro
                 {/* Progress bar */}
                 <div className="w-full h-2 bg-stone-100 rounded-full mb-4 overflow-hidden">
                     <div
-                        className="h-full bg-gradient-to-r from-pink-300 to-pink-400 rounded-full transition-all duration-500"
+                        className="h-full bg-gradient-to-r from-green-400 to-green-600 rounded-full transition-all duration-500"
                         style={{ width: `${progressPercent}%` }}
                     />
                 </div>
@@ -42,7 +42,7 @@ export default function ChallengeCard({ challenge, dailyLogs }: ChallengeCardPro
                         <div
                             key={log.id}
                             className={`w-full aspect-square rounded-sm text-[10px] flex items-center justify-center
-                ${log.status === 'success' ? 'bg-pink-200 text-pink-600' :
+                ${log.status === 'success' ? 'bg-green-100 text-green-700' :
                                     log.status === 'fail' ? 'bg-stone-200 text-stone-500' :
                                         'bg-stone-50 border border-stone-200 text-stone-400'
                                 }`}

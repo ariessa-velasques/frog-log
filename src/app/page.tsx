@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { Plus, LogOut, Sparkles } from 'lucide-react'
+import Image from 'next/image'
+import { Plus, LogOut } from 'lucide-react'
 import { useAuth } from '@/components/AuthProvider'
 import { getChallenges } from '@/lib/api/challenges'
 import { createClient } from '@/lib/supabase'
@@ -37,7 +38,6 @@ export default function Dashboard() {
       const data = await getChallenges()
       const supabase = createClient()
 
-      // Fetch daily logs for each challenge
       const challengesWithLogs = await Promise.all(
         data.map(async (challenge) => {
           const { data: logs } = await supabase
@@ -61,7 +61,7 @@ export default function Dashboard() {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="animate-float">
-          <Sparkles size={48} className="text-pink-400" />
+          <Image src="/sapo.png" alt="sapo" width={64} height={64} className="opacity-80" />
         </div>
       </div>
     )
@@ -74,7 +74,7 @@ export default function Dashboard() {
       {/* Header */}
       <header className="sticky top-0 z-40 bg-cream/80 backdrop-blur-md border-b border-stone-200/50">
         <div className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
-          <HandwrittenTitle text="Goal Tracker ✦" as="h1" className="text-2xl! md:text-3xl!" />
+          <HandwrittenTitle text="FrogLog ✦" as="h1" className="text-2xl! md:text-3xl!" />
           <button
             onClick={signOut}
             className="flex items-center gap-2 text-sm text-stone-500 hover:text-stone-700 transition-colors px-3 py-2 rounded-lg hover:bg-white/60"
@@ -90,18 +90,18 @@ export default function Dashboard() {
         {loadingData ? (
           <div className="flex items-center justify-center py-20">
             <div className="animate-float">
-              <Sparkles size={36} className="text-pink-400" />
+              <Image src="/sapo.png" alt="sapo" width={48} height={48} className="opacity-70" />
             </div>
           </div>
         ) : challenges.length === 0 ? (
           /* Empty state */
           <div className="text-center py-20 animate-fadeIn">
             <div className="inline-block mb-6">
-              <div className="w-24 h-24 mx-auto bg-pink-100 rounded-full flex items-center justify-center animate-float">
-                <Sparkles size={40} className="text-pink-400" />
+              <div className="w-28 h-28 mx-auto rounded-full flex items-center justify-center animate-float" style={{ background: '#ceffb5' }}>
+                <Image src="/sapo.png" alt="sapo" width={64} height={64} />
               </div>
             </div>
-            <h2 className="font-handwritten text-3xl text-pink-600 mb-3">
+            <h2 className="font-handwritten text-3xl mb-3" style={{ color: '#52a033' }}>
               Comece sua jornada!
             </h2>
             <p className="text-stone-500 mb-8 max-w-sm mx-auto">
@@ -109,7 +109,8 @@ export default function Dashboard() {
             </p>
             <button
               onClick={() => router.push('/new')}
-              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-pink-400 to-pink-500 text-white rounded-xl font-medium shadow-lg shadow-pink-200 hover:shadow-xl hover:from-pink-500 hover:to-pink-600 transition-all duration-200 hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2 px-6 py-3 text-white rounded-xl font-medium shadow-lg transition-all duration-200 hover:-translate-y-0.5"
+              style={{ background: 'linear-gradient(135deg, #83d45a, #52a033)', boxShadow: '0 4px 14px rgba(131,212,90,0.4)' }}
             >
               <Plus size={20} />
               Novo Desafio
@@ -124,7 +125,8 @@ export default function Dashboard() {
               </h2>
               <button
                 onClick={() => router.push('/new')}
-                className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-pink-400 to-pink-500 text-white rounded-xl text-sm font-medium shadow-sm hover:shadow-md hover:from-pink-500 hover:to-pink-600 transition-all duration-200"
+                className="flex items-center gap-2 px-4 py-2 text-white rounded-xl text-sm font-medium shadow-sm transition-all duration-200"
+                style={{ background: 'linear-gradient(135deg, #83d45a, #52a033)' }}
               >
                 <Plus size={16} />
                 Novo

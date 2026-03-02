@@ -99,7 +99,7 @@ export default function RoughBoard({ dailyLogs, onDayClick, columns = 8 }: Rough
                         CELL_SIZE + 16,
                         CELL_SIZE + 12,
                         {
-                            fill: 'rgba(244, 143, 177, 0.45)',
+                            fill: 'rgba(206, 255, 181, 0.55)',
                             fillStyle: 'solid',
                             stroke: 'none',
                             roughness: 2.5,
@@ -191,7 +191,7 @@ export default function RoughBoard({ dailyLogs, onDayClick, columns = 8 }: Rough
                     select-none transition-transform duration-150
                     ${isFuture ? 'cursor-default text-stone-300' : 'cursor-pointer text-stone-800'}
                     ${!isFuture && isHovered ? 'scale-110' : ''}
-                    ${log.status === 'success' ? 'text-pink-700 font-bold' : ''}
+                    ${log.status === 'success' ? 'text-green-800 font-bold' : ''}
                     ${log.status === 'fail' ? 'text-stone-400' : ''}
                   `}
                                     style={{ width: CELL_SIZE, height: CELL_SIZE }}

@@ -1,4 +1,4 @@
-# Goal Tracker ✦ Especificações do Projeto
+# FrogLog ✦ Especificações do Projeto
 
 ## Visão Geral
 
@@ -21,11 +21,12 @@ Aplicação web gamificada de rastreamento de hábitos e metas, inspirada em bul
 ## Identidade Visual
 
 - **Estética**: Caderno quadriculado / bullet journal feito à mão
+- **Mascote**: Sapo (`sapo.png`) — presente no logo, loading e incentivos
 - **Background**: Grade quadriculada (graph paper) em tom creme
-- **Cores**: Paleta pastel — rosa (`#f4a7bb`), creme (`#faf8f5`), pedra (`#e8e4de`)
+- **Cores**: Paleta verde — verde pastel (`#ceffb5`), verde médio (`#83d45a`), creme (`#faf8f5`)
 - **Tipografia**: Títulos em Gochi Hand (manuscrita), corpo em Inter
 - **Bordas do tabuleiro**: Caneta preta grossa (`#2a2520`) com sombra
-- **Dias concluídos**: Efeito de marca-texto/giz de cera rosa (radial-gradient)
+- **Dias concluídos**: Efeito de marca-texto verde (`#ceffb5` gradiente)
 - **Dias falhados**: Efeito marca-texto cinza
 
 ## Modelo de Dados

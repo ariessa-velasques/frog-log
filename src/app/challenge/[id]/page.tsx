@@ -2,10 +2,11 @@
 
 import { useEffect, useState } from 'react'
 import { useRouter, useParams } from 'next/navigation'
+import Image from 'next/image'
 import { useAuth } from '@/components/AuthProvider'
 import { getChallengeWithDetails, deleteChallenge } from '@/lib/api/challenges'
 import { ChallengeWithDetails, DailyLog } from '@/lib/types'
-import { ArrowLeft, Trash2, Sparkles, CalendarDays, Target } from 'lucide-react'
+import { ArrowLeft, Trash2, CalendarDays, Target } from 'lucide-react'
 import HandwrittenTitle from '@/components/HandwrittenTitle'
 import BoardGrid from '@/components/BoardGrid'
 import RuleCard from '@/components/RuleCard'
@@ -85,7 +86,7 @@ export default function ChallengeDetailPage() {
         return (
             <div className="min-h-screen flex items-center justify-center">
                 <div className="animate-float">
-                    <Sparkles size={48} className="text-pink-400" />
+                    <Image src="/sapo.png" alt="sapo" width={64} height={64} className="opacity-80" />
                 </div>
             </div>
         )
@@ -138,15 +139,15 @@ export default function ChallengeDetailPage() {
                 <div className="card-paper p-4 mb-6 animate-fadeIn">
                     <div className="flex flex-wrap items-center gap-4 text-sm text-stone-600">
                         <div className="flex items-center gap-2">
-                            <CalendarDays size={16} className="text-pink-400" />
+                            <CalendarDays size={16} className="text-green-500" />
                             <span>Início: {formattedStart}</span>
                         </div>
                         <div className="flex items-center gap-2">
-                            <Target size={16} className="text-pink-400" />
+                            <Target size={16} className="text-green-500" />
                             <span>Dia {completedCount}/{challenge.total_days}</span>
                         </div>
                         <div className="flex items-center gap-2">
-                            <span className="inline-block w-3 h-3 rounded-md bg-pink-300" />
+                            <span className="inline-block w-3 h-3 rounded-md bg-green-400" />
                             <span>{successCount} sucesso{successCount !== 1 ? 's' : ''}</span>
                         </div>
                         <div className="flex items-center gap-2">
@@ -158,7 +159,7 @@ export default function ChallengeDetailPage() {
                     {/* Progress bar */}
                     <div className="w-full h-2 bg-stone-100 rounded-full mt-3 overflow-hidden">
                         <div
-                            className="h-full bg-gradient-to-r from-pink-300 to-pink-400 rounded-full transition-all duration-700"
+                            className="h-full bg-gradient-to-r from-green-400 to-green-600 rounded-full transition-all duration-700"
                             style={{ width: `${challenge.total_days > 0 ? (completedCount / challenge.total_days) * 100 : 0}%` }}
                         />
                     </div>
@@ -188,11 +189,11 @@ export default function ChallengeDetailPage() {
                 {/* Lembre-se (Reminders/Motivations) */}
                 {reminders.length > 0 && (
                     <div className="card-paper p-6 mb-6 animate-fadeIn" style={{ animationDelay: '0.15s' }}>
-                        <h3 className="font-handwritten text-2xl text-pink-600 mb-4">Lembre-se:</h3>
+                        <h3 className="font-handwritten text-2xl text-green-700 mb-4">Lembre-se:</h3>
                         <ul className="space-y-3">
                             {reminders.map((reminder, index) => (
                                 <li key={index} className="flex items-start gap-2 text-stone-600">
-                                    <span className="text-pink-400 font-bold mt-0.5">✦</span>
+                                    <span className="text-green-500 font-bold mt-0.5">✦</span>
                                     <span className="text-sm leading-relaxed">{reminder}</span>
                                 </li>
                             ))}
@@ -202,7 +203,10 @@ export default function ChallengeDetailPage() {
 
                 {/* Motivational footer */}
                 <div className="card-paper p-6 text-center animate-fadeIn" style={{ animationDelay: '0.2s' }}>
-                    <p className="font-handwritten text-2xl text-pink-500 mb-2">You can do it! ✦</p>
+                    <div className="flex items-center justify-center gap-2 mb-2">
+                        <Image src="/sapo.png" alt="sapo" width={32} height={32} />
+                        <p className="font-handwritten text-2xl text-green-600">You can do it! ✦</p>
+                    </div>
                     <p className="text-sm text-stone-500">
                         Cada dia marcado é um passo mais perto do seu objetivo.
                     </p>

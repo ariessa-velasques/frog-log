@@ -2,9 +2,10 @@
 
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
+import Image from 'next/image'
 import { useAuth } from '@/components/AuthProvider'
 import { createChallenge } from '@/lib/api/challenges'
-import { ArrowLeft, Plus, X, Sparkles, Calendar, Hash, Type } from 'lucide-react'
+import { ArrowLeft, Plus, X, Calendar, Hash, Type } from 'lucide-react'
 import HandwrittenTitle from '@/components/HandwrittenTitle'
 import DatePicker from '@/components/DatePicker'
 
@@ -116,7 +117,7 @@ export default function NewChallengePage() {
                     {/* Title */}
                     <div className="card-paper p-6 animate-fadeIn">
                         <label htmlFor="title" className="flex items-center gap-2 text-sm font-medium text-stone-600 mb-2">
-                            <Type size={16} className="text-pink-400" />
+                            <Type size={16} className="text-green-500" />
                             Nome do Desafio
                         </label>
                         <input
@@ -126,7 +127,7 @@ export default function NewChallengePage() {
                             onChange={(e) => setTitle(e.target.value)}
                             placeholder="Ex: No Spend Março, Foco Estudos, 30 Dias Fitness..."
                             required
-                            className="w-full px-4 py-3 text-base border border-stone-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-pink-300 focus:border-pink-300 bg-white/50 text-stone-700 placeholder:text-stone-400"
+                            className="w-full px-4 py-3 text-base border border-stone-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-300 focus:border-green-300 bg-white/50 text-stone-700 placeholder:text-stone-400"
                         />
                     </div>
 
@@ -143,7 +144,7 @@ export default function NewChallengePage() {
 
                             <div>
                                 <label className="flex items-center gap-2 text-sm font-medium text-stone-600 mb-2">
-                                    <Hash size={16} className="text-pink-400" />
+                                    <Hash size={16} className="text-green-500" />
                                     Duração
                                 </label>
                                 <div className="grid grid-cols-3 gap-1.5">
@@ -153,7 +154,7 @@ export default function NewChallengePage() {
                                             type="button"
                                             onClick={() => setTotalDays(value)}
                                             className={`py-2 px-2 text-xs font-medium rounded-lg transition-all duration-200 ${totalDays === value
-                                                ? 'bg-pink-400 text-white shadow-sm'
+                                                ? 'bg-green-500 text-white shadow-sm'
                                                 : 'bg-stone-100 text-stone-600 hover:bg-stone-200'
                                                 }`}
                                         >
@@ -169,7 +170,7 @@ export default function NewChallengePage() {
                                         placeholder="Número de dias"
                                         min={1}
                                         max={365}
-                                        className="w-full mt-2 px-4 py-2 text-sm border border-stone-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-pink-300 bg-white/50 text-stone-700"
+                                        className="w-full mt-2 px-4 py-2 text-sm border border-stone-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-400 bg-white/50 text-stone-700"
                                     />
                                 )}
                             </div>
@@ -178,19 +179,19 @@ export default function NewChallengePage() {
 
                     {/* Do Rules */}
                     <div className="card-paper p-6 animate-fadeIn" style={{ animationDelay: '0.1s' }}>
-                        <h3 className="font-handwritten text-xl text-pink-600 mb-3">
+                        <h3 className="font-handwritten text-xl text-green-700 mb-3">
                             ✓ Pode / Permitido
                         </h3>
                         <div className="space-y-2">
                             {doRules.map((rule, index) => (
                                 <div key={index} className="flex items-center gap-2">
-                                    <span className="text-pink-400">•</span>
+                                    <span className="text-green-500">•</span>
                                     <input
                                         type="text"
                                         value={rule}
                                         onChange={(e) => updateRule('do', index, e.target.value)}
                                         placeholder="Ex: Estudar 2h, Comer frutas, Caminhar..."
-                                        className="flex-1 px-3 py-2 text-sm border border-stone-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-300 bg-white/50 text-stone-700 placeholder:text-stone-400"
+                                        className="flex-1 px-3 py-2 text-sm border border-stone-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400 bg-white/50 text-stone-700 placeholder:text-stone-400"
                                     />
                                     {doRules.length > 1 && (
                                         <button
@@ -206,7 +207,7 @@ export default function NewChallengePage() {
                             <button
                                 type="button"
                                 onClick={() => addRule('do')}
-                                className="flex items-center gap-1 text-xs text-pink-500 hover:text-pink-600 transition-colors mt-1"
+                                className="flex items-center gap-1 text-xs text-green-600 hover:text-green-700 transition-colors mt-1"
                             >
                                 <Plus size={14} /> Adicionar regra
                             </button>
@@ -252,14 +253,14 @@ export default function NewChallengePage() {
 
                     {/* Lembre-se (Reminders) */}
                     <div className="card-paper p-6 animate-fadeIn" style={{ animationDelay: '0.2s' }}>
-                        <h3 className="font-handwritten text-xl text-pink-600 mb-3">
+                        <h3 className="font-handwritten text-xl text-green-700 mb-3">
                             ✦ Lembre-se
                         </h3>
                         <p className="text-xs text-stone-400 mb-3">Frases motivacionais para te lembrar nos dias difíceis</p>
                         <div className="space-y-2">
                             {reminders.map((reminder, index) => (
                                 <div key={index} className="flex items-center gap-2">
-                                    <span className="text-pink-400">✦</span>
+                                    <span className="text-green-500">✦</span>
                                     <input
                                         type="text"
                                         value={reminder}
@@ -269,7 +270,7 @@ export default function NewChallengePage() {
                                             setReminders(updated)
                                         }}
                                         placeholder="Ex: Cada real economizado vai te ajudar no futuro"
-                                        className="flex-1 px-3 py-2 text-sm border border-stone-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-300 bg-white/50 text-stone-700 placeholder:text-stone-400"
+                                        className="flex-1 px-3 py-2 text-sm border border-stone-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400 bg-white/50 text-stone-700 placeholder:text-stone-400"
                                     />
                                     {reminders.length > 1 && (
                                         <button
@@ -285,7 +286,7 @@ export default function NewChallengePage() {
                             <button
                                 type="button"
                                 onClick={() => setReminders([...reminders, ''])}
-                                className="flex items-center gap-1 text-xs text-pink-500 hover:text-pink-600 transition-colors mt-1"
+                                className="flex items-center gap-1 text-xs text-green-600 hover:text-green-700 transition-colors mt-1"
                             >
                                 <Plus size={14} /> Adicionar lembrete
                             </button>
@@ -303,13 +304,16 @@ export default function NewChallengePage() {
                     <button
                         type="submit"
                         disabled={submitting || !title.trim()}
-                        className="w-full flex items-center justify-center gap-2 py-4 bg-gradient-to-r from-pink-400 to-pink-500 text-white rounded-xl font-medium text-base shadow-lg shadow-pink-200 hover:shadow-xl hover:from-pink-500 hover:to-pink-600 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed hover:-translate-y-0.5"
+                        className="w-full flex items-center justify-center gap-3 py-4 text-white rounded-xl font-medium text-base shadow-lg transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed hover:-translate-y-0.5"
+                        style={{ background: 'linear-gradient(135deg, #83d45a, #52a033)', boxShadow: '0 4px 14px rgba(131,212,90,0.4)' }}
                     >
                         {submitting ? (
                             <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                         ) : (
                             <>
-                                <Sparkles size={20} />
+                                <div className="animate-float">
+                                    <Image src="/sapo.png" alt="sapo" width={24} height={24} />
+                                </div>
                                 Criar Desafio
                             </>
                         )}

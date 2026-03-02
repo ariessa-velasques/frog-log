@@ -52,7 +52,7 @@ export default function DayLogModal({ log, onClose, onUpdate }: DayLogModalProps
 
                 {/* Header */}
                 <div className="text-center mb-5">
-                    <h3 className="font-handwritten text-2xl text-pink-600">
+                    <h3 className="font-handwritten text-2xl text-green-700">
                         Dia {log.day_number}
                     </h3>
                     <p className="text-sm text-stone-500 mt-1">{formattedDate}</p>
@@ -67,7 +67,7 @@ export default function DayLogModal({ log, onClose, onUpdate }: DayLogModalProps
                         value={notes}
                         onChange={(e) => setNotes(e.target.value)}
                         placeholder="Como foi o dia? Ex: Fui pra academia hoje..."
-                        className="w-full p-3 text-sm border border-stone-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-300 focus:border-pink-300 resize-none bg-stone-50/50 text-stone-700 placeholder:text-stone-400"
+                        className="w-full p-3 text-sm border border-stone-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-300 focus:border-green-300 resize-none bg-stone-50/50 text-stone-700 placeholder:text-stone-400"
                         rows={3}
                     />
                 </div>
@@ -82,7 +82,7 @@ export default function DayLogModal({ log, onClose, onUpdate }: DayLogModalProps
                     <button
                         onClick={() => handleStatus('success')}
                         disabled={loading}
-                        className="flex items-center justify-center gap-2 py-3 px-4 bg-gradient-to-r from-pink-400 to-pink-500 text-white rounded-xl font-medium text-sm shadow-sm hover:shadow-md hover:from-pink-500 hover:to-pink-600 transition-all duration-200 disabled:opacity-50"
+                        className="flex items-center justify-center gap-2 py-3 px-4 bg-gradient-to-r from-green-400 to-green-600 text-white rounded-xl font-medium text-sm shadow-sm hover:shadow-md hover:from-green-500 hover:to-green-700 transition-all duration-200 disabled:opacity-50"
                     >
                         <Check size={18} />
                         Sucesso!
