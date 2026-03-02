@@ -1,0 +1,358 @@
+@import "tailwindcss";
+
+/* ========== Design Tokens ========== */
+:root {
+  --color-cream: #faf8f5;
+  --color-cream-dark: #f0ece5;
+  --color-stone-light: #e8e4de;
+  --color-pink-pastel: #f4a7bb;
+  --color-pink-light: #fce4ec;
+  --color-pink-medium: #e91e80;
+  --color-blue-pastel: #a7c7e7;
+  --color-blue-light: #e3f2fd;
+  --color-red-light: #fecaca;
+  --grid-color: #d4cfc8;
+}
+
+@theme inline {
+  --color-background: var(--color-cream);
+  --color-foreground: #3d3832;
+  --font-sans: var(--font-inter), 'Inter', sans-serif;
+  --font-handwritten: var(--font-gochi), 'Gochi Hand', cursive;
+
+  --color-cream: #faf8f5;
+  --color-cream-dark: #f0ece5;
+  --color-stone-line: #e8e4de;
+
+  --animate-pop: pop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --animate-slideUp: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-fadeIn: fadeIn 0.2s ease;
+  --animate-float: float 3s ease-in-out infinite;
+}
+
+/* ========== Graph Paper Background ========== */
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-cream);
+  color: #3d3832;
+  background-image:
+    linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+  background-size: 24px 24px;
+  background-position: center center;
+  min-height: 100vh;
+}
+
+/* ========== Font Classes ========== */
+.font-handwritten {
+  font-family: var(--font-handwritten);
+  letter-spacing: 0.5px;
+}
+
+/* ========== Animations ========== */
+@keyframes pop {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+/* ========== Custom Scrollbar ========== */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--grid-color);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b8b3ab;
+}
+
+/* ========== Focus Styles ========== */
+*:focus-visible {
+  outline: 2px solid var(--color-pink-pastel);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ========== Utility Classes ========== */
+.card-paper {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--color-stone-light);
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.card-paper:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.dashed-card {
+  border: 2px dashed var(--color-stone-light);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+/* ========== Hand-drawn Pen & Highlighter Styles ========== */
+
+/* Day cell base — thick ink pen border */
+.day-cell {
+  border: 2.5px solid #2a2520;
+  box-shadow: 1px 1px 0px #2a2520;
+  background: transparent;
+  color: #2a2520;
+}
+
+.day-cell-pending {
+  border-color: #2a2520;
+}
+
+.day-cell-pending:hover {
+  border-width: 3px;
+  transform: translateY(-2px);
+  box-shadow: 2px 2px 0px #2a2520;
+}
+
+.day-cell-future {
+  border-color: #2a2520;
+  color: #b8b3ab;
+}
+
+.day-cell-success,
+.day-cell-fail {
+  border-color: #2a2520;
+}
+
+/* Highlighter / crayon splash effect */
+.highlighter-splash {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.55;
+  filter: blur(1px);
+  animation: splashIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.highlighter-pink {
+  background: radial-gradient(ellipse at 40% 45%,
+      #f9a8c9 0%,
+      #f48fb1 30%,
+      #f06292 50%,
+      rgba(244, 143, 177, 0.3) 70%,
+      transparent 100%);
+}
+
+.highlighter-gray {
+  background: radial-gradient(ellipse at 55% 50%,
+      #c4bfb8 0%,
+      #a8a29e 30%,
+      rgba(168, 162, 158, 0.3) 60%,
+      transparent 100%);
+}
+
+@keyframes splashIn {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+
+  60% {
+    transform: scale(1.1);
+    opacity: 0.6;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+}
+
+/* Pen-stroke connector lines */
+.pen-connector-h {
+  width: 12px;
+  height: 2.5px;
+  background: #2a2520;
+  flex-shrink: 0;
+  border-radius: 1px;
+}
+
+.pen-connector-v {
+  width: 2.5px;
+  height: 16px;
+  background: #2a2520;
+  border-radius: 1px;
+}
+
+@media (min-width: 768px) {
+  .pen-connector-h {
+    width: 16px;
+  }
+}
+
+/* ========== Date Picker (react-day-picker) ========== */
+.date-picker-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border: 2px solid #2a2520;
+  border-radius: 16px;
+  box-shadow: 3px 3px 0px #2a2520;
+  padding: 12px;
+}
+
+.rdp-root {
+  --rdp-accent-color: #f4a7bb;
+  --rdp-accent-background-color: #fce4ec;
+  font-family: var(--font-sans);
+}
+
+.rdp-months {
+  display: flex;
+  flex-direction: column;
+}
+
+.rdp-caption {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 0 8px;
+  font-family: var(--font-handwritten);
+  font-size: 1.1rem;
+  color: #2a2520;
+}
+
+.rdp-nav {
+  display: flex;
+  gap: 4px;
+  position: absolute;
+  right: 12px;
+  top: 12px;
+}
+
+.rdp-nav-btn {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  color: #2a2520;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 1.5px solid transparent;
+}
+
+.rdp-nav-btn:hover {
+  background: #fce4ec;
+  border-color: #f4a7bb;
+}
+
+.rdp-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.rdp-weekday {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #a8a29e;
+  text-transform: uppercase;
+  padding: 4px 0;
+  text-align: center;
+}
+
+.rdp-day {
+  text-align: center;
+  padding: 2px;
+}
+
+.rdp-day-btn {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  color: #3d3832;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 1.5px solid transparent;
+  font-weight: 500;
+}
+
+.rdp-day-btn:hover {
+  background: #fce4ec;
+  border-color: #f4a7bb;
+  transform: scale(1.05);
+}
+
+.rdp-selected .rdp-day-btn {
+  background: linear-gradient(135deg, #f4a7bb, #e91e80);
+  color: white;
+  border-color: #e91e80;
+  font-weight: 700;
+  box-shadow: 1px 1px 0 #2a2520;
+}
+
+.rdp-today .rdp-day-btn {
+  border-color: #f4a7bb;
+  font-weight: 700;
+  color: #e91e80;
+}
+
+.rdp-outside .rdp-day-btn {
+  color: #d1ccc5;
+}
