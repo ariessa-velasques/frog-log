@@ -7,8 +7,9 @@ FrogLog é um rastreador de metas (goal tracker) digital inspirado em *layouts* 
 A experiência de usuário (UX) e interface (UI) do FrogLog foram fortemente inspiradas por rastreadores desenhados à mão, mais especificamente baseados nos desafios de "No Spend Month" (Mês Sem Gastos) que você encontra em planners.
 
 A ideia de criar o app surgiu depois que encontrei referências muito fofas no twitter, tentei reproduzir eu mesma no papel e ter ficado uma merda 🥲. Então decidi fazer a versão digital! Um agradecimento especial às ideias originais:
-- [Desenho de referência 1 por @sopinguim](https://x.com/sopinguim/status/2027827488898871402?s=20)
-- [Desenho de referência 2 por @anakarolinim](https://x.com/anakarolinim/status/2023728636528931009?s=20)
+- [Desenho de referência 1 por @anakarolinim](https://x.com/anakarolinim/status/2023728636528931009?s=20)
+- [Desenho de referência 2 por @sopinguim](https://x.com/sopinguim/status/2027827488898871402?s=20)
+
 
 <div align="center">
   <img src="./docs/inspiration1.jpg" alt="Inspiração do Tracker 1" width="400"/>
