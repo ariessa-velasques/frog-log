@@ -26,13 +26,7 @@ A ideia de criar o app surgiu depois que encontrei referências muito fofas no t
 Veja alguns prints do FrogLog em funcionamento:
 
 <div align="center">
-  <img src="./docs/app_login.png" alt="Tela de Login" width="400"/>
-  <img src="./docs/app_home.png" alt="Tela Inicial" width="400"/>
-</div>
-<br/>
-<div align="center">
-  <img src="./docs/app_board1.png" alt="Tabuleiro Interativo Web" width="400"/>
-  <img src="./docs/app_board2.png" alt="Tabuleiro Interativo Mobile" width="400"/>
+  <img src="./docs/colagem.png" alt="Telas do Sistema FrogLog" width="100%"/>
 </div>
 
 ## 🚀 Tecnologias
