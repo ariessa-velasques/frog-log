@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🐸 FrogLog
 
-## Getting Started
+FrogLog é um rastreador de metas (goal tracker) digital inspirado em *layouts* físicos de *bullet journals* e cadernos de anotações. O nome **FrogLog** surgiu simplesmente pelo meu amor por sapos! 🐸💚 O projeto traz a sensação aconchegante, tátil e personalizada de trackers de papel para uma aplicação web ágil e fácil de usar.
 
-First, run the development server:
+## 🌟 O Conceito & Inspiração de UI/UX
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+A experiência de usuário (UX) e interface (UI) do FrogLog foram fortemente inspiradas por rastreadores desenhados à mão, mais especificamente baseados nos desafios de "No Spend Month" (Mês Sem Gastos) que você encontra em planners.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+A ideia de criar o app surgiu depois que encontrei referências muito fofas no twitter, tentei reproduzir eu mesma no papel e ter ficado uma merda 🥲. Então decidi fazer a versão digital! Um agradecimento especial às ideias originais:
+- [Desenho de referência 1 por @sopinguim](https://x.com/sopinguim/status/2027827488898871402?s=20)
+- [Desenho de referência 2 por @anakarolinim](https://x.com/anakarolinim/status/2023728636528931009?s=20)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Como traduzimos isso para o mundo digital:
+1. **O Tabuleiro (Board)**: Um caminho visual simulando um jogo de tabuleiro, usado para carimbar visualmente os dias de sucesso ou falha.
+2. **As Regras**: Inspirado nas caixinhas tracejadas de "Posso Gastar Com" e "Não Posso Gastar", o sistema permite listar regras do que Fazer e Evitar durante a meta.
+3. **Lembretes (Lembre-se)**: Um espaço dedicado a post-its e notas motivacionais pessoais para te manter no caminho certo.
+4. **Estilo "Handwritten"**: Fontes que simulam escrita à mão, fundos quadriculados que lembram folhas de caderno e designs em SVG para reter o charme *handmade*.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📸 Como ficou o sistema!
 
-## Learn More
+Veja alguns prints do FrogLog em funcionamento:
 
-To learn more about Next.js, take a look at the following resources:
+<div align="center">
+  <img src="./docs/app_login.png" alt="Tela de Login" width="400"/>
+  <img src="./docs/app_home.png" alt="Tela Inicial" width="400"/>
+</div>
+<br/>
+<div align="center">
+  <img src="./docs/app_board1.png" alt="Tabuleiro Interativo Parte 1" width="400"/>
+  <img src="./docs/app_board2.png" alt="Tabuleiro Interativo Parte 2" width="400"/>
+</div>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🚀 Tecnologias
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Framework**: [Next.js](https://nextjs.org/) (App Router)
+- **Estilização**: Tailwind CSS 
+- **DB e Auth**: [Supabase](https://supabase.com/)
+- **Deploy**: Vercel
 
-## Deploy on Vercel
+## 🌐 Acesso ao Projeto
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+O projeto está no ar e pode ser acessado através do link:
+👉 **[https://frogglog.vercel.app/](https://frogglog.vercel.app/)**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### � Como instalar no Celular (Aplicativo Móvel)
+O FrogLog funciona como um **PWA (Progressive Web App)**, o que significa que você pode instalá-arlo diretamente no seu celular como se fosse um aplicativo nativo, sem precisar de uma loja de aplicativos!
+
+**No iPhone (iOS / Safari):**
+1. Abra o link do projeto no **Safari**.
+2. Toque no ícone de "Compartilhar" (o quadrado com uma seta para cima, na barra inferior).
+3. Role para baixo e selecione **"Adicionar à Tela de Início"** (Add to Home Screen).
+4. Confirme tocando em "Adicionar". Pronto! O ícone do sapinho estará nos seus aplicativos.
+
+**No Android (Chrome):**
+1. Abra o link do projeto no **Google Chrome**.
+2. Toque nos três pontinhos (`⋮`) no canto superior direito para abrir o menu.
+3. Selecione **"Adicionar à tela inicial"** ou "Instalar aplicativo".
+4. Confirme a instalação. O aplicativo aparecerá na sua tela de início!
