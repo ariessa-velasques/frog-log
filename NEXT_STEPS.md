@@ -1,4 +1,4 @@
-# Goal Tracker ✦ Próximos Passos
+# FrogLog ✦ Próximos Passos
 
 Roadmap para tornar o projeto robusto e pronto para produção.
 

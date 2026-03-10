@@ -1,5 +1,5 @@
 -- ==========================================
--- Goal Tracker - Database Schema
+-- FrogLog - Database Schema
 -- Run this in your Supabase SQL Editor
 -- ==========================================
 
