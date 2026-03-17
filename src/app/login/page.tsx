@@ -53,13 +53,13 @@ export default function LoginPage() {
                 <div className="text-center mb-8 animate-fadeIn">
                     <div className="inline-block mb-4">
                         <div className="animate-float">
-                            <Image src="/sapo.png" alt="sapo" width={144} height={144} priority />
+                            <Image src="/assets/sapo.png" alt="sapo" width={144} height={144} priority />
                         </div>
                     </div>
                     <h1 className="text-4xl md:text-5xl text-green-700 mb-2" style={{ fontFamily: 'var(--font-rubik-doodle)' }}>FrogLog</h1>
                     <p className="text-stone-500 text-sm flex items-center justify-center gap-1">
                         Seu diário de metas gamificado
-                        <Image src="/sapo2.png" alt="sapo" width={16} height={16} />
+                        <Image src="/assets/sapo2.png" alt="sapo" width={16} height={16} />
                     </p>
                 </div>
 

@@ -86,7 +86,7 @@ export default function ChallengeDetailPage() {
         return (
             <div className="min-h-screen flex items-center justify-center">
                 <div className="animate-float">
-                    <Image src="/sapo.png" alt="sapo" width={64} height={64} className="opacity-80" />
+                    <Image src="/assets/sapo.png" alt="sapo" width={64} height={64} className="opacity-80" />
                 </div>
             </div>
         )
@@ -198,7 +198,7 @@ export default function ChallengeDetailPage() {
                             <ul className="space-y-3">
                                 {reminders.map((reminder, index) => (
                                     <li key={index} className="flex items-start gap-2 text-stone-600">
-                                        <Image src="/sapo2.png" alt="sapo" width={16} height={16} className="mt-1 opacity-70" />
+                                        <Image src="/assets/sapo2.png" alt="sapo" width={16} height={16} className="mt-1 opacity-70" />
                                         <span className="text-sm leading-relaxed">{reminder}</span>
                                     </li>
                                 ))}
@@ -210,7 +210,7 @@ export default function ChallengeDetailPage() {
                 {/* Motivational footer — cloud shape */}
                 <div className="relative text-center animate-fadeIn min-h-[250px] flex items-center justify-center" style={{ animationDelay: '0.2s' }}>
                     <Image
-                        src="/nuvem.png"
+                        src="/assets/nuvem.png"
                         alt="nuvem"
                         fill
                         className="object-contain pointer-events-none scale-125"

@@ -61,7 +61,7 @@ export default function Dashboard() {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="animate-float">
-          <Image src="/sapo.png" alt="sapo" width={64} height={64} className="opacity-80" />
+          <Image src="/assets/sapo.png" alt="sapo" width={64} height={64} className="opacity-80" />
         </div>
       </div>
     )
@@ -76,7 +76,7 @@ export default function Dashboard() {
         <div className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <h1 className="text-2xl md:text-3xl text-green-700" style={{ fontFamily: 'var(--font-rubik-doodle)' }}>FrogLog</h1>
-            <Image src="/sapo2.png" alt="sapo" width={32} height={32} />
+            <Image src="/assets/sapo2.png" alt="sapo" width={32} height={32} />
           </div>
           <button
             onClick={signOut}
@@ -93,7 +93,7 @@ export default function Dashboard() {
         {loadingData ? (
           <div className="flex items-center justify-center py-20">
             <div className="animate-float">
-              <Image src="/sapo.png" alt="sapo" width={48} height={48} className="opacity-70" />
+              <Image src="/assets/sapo.png" alt="sapo" width={48} height={48} className="opacity-70" />
             </div>
           </div>
         ) : challenges.length === 0 ? (
@@ -101,7 +101,7 @@ export default function Dashboard() {
           <div className="text-center py-20 animate-fadeIn">
             <div className="inline-block mb-6">
               <div className="w-28 h-28 mx-auto rounded-full flex items-center justify-center animate-float" style={{ background: '#ceffb5' }}>
-                <Image src="/sapo.png" alt="sapo" width={64} height={64} />
+                <Image src="/assets/sapo.png" alt="sapo" width={64} height={64} />
               </div>
             </div>
             <h2 className="font-handwritten text-3xl mb-3" style={{ color: '#52a033' }}>
